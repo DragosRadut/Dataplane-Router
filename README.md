@@ -1,5 +1,31 @@
 # Router Dataplane
-Author: Radut Dragos 321CD
+## Description
+The entire project stands under the copyright of University Politehnica of Bucharest, PCOM 2023, being a graded assignment. 
+The implementation uses Miniet for simulating the network in which the router operates. 
+The implementation is targeted at constructing the dataplane of a router which is responsible with forwarding.
+The following components are implemented:
+* Forwarding
+* LPM (Longest Prefix Match)
+* ARP
+* ICMP
+
+## Usage
+* Start Mininet topology:
+`sudo python3 topo.py
+# topology is considered as follows:
+host0                           host2     
+      \                       /
+       router0 ------- router1 
+      /                       \
+host1                           host3
+`
+* Start router:
+`
+make run_router0
+make run_router1
+`
+* Commands for clients:
+`ping, arping, netcat`
 
 ## Structures
 Toate structurile cu instantiere unica se initializeaza inainte de intrarea in loop-ul de "listen" : route table, arp_cache, list (packet queue) si root (LPM trie).
